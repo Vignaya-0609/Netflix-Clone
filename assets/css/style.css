@@ -64,7 +64,7 @@ nav button{
     font-size: 60px;
     line-height: 70px;
     font-weight: 600;
-    max-width: 650px;
+    max-width: 850px;
 }
 .header-content h3, .header-content p{
     font-weight: 400;
@@ -74,11 +74,11 @@ nav button{
     display: flex;
     align-items: center;
     overflow: hidden;
-    max-width: 800px;
+    max-width: 900px;
     margin: 20px auto 60px;
 }
 .email-signup input{
-    flex: 1;
+    flex-basis: 75%;
     border: 0;
     outline: 0;
     margin-left: 20px;
@@ -87,6 +87,7 @@ nav button{
     border-radius: 4px 0 0 4px;
 }
 .email-signup button{
+    flex-basis: 25%;
     border: 0;
     outline:0;
     background: #db0001;
@@ -235,7 +236,38 @@ input[type="radio"]{
 }
 
 /* media queries */
+@media only screen and (max-width:925px){
+    .header-content h1{
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .email-signup button{
+        flex-basis: 70%;
+    }
+    .email-signup input{
+        flex-basis: 30%;
+    }
+}
+@media only screen and (max-width:707px){
+    .email-signup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .email-signup button,
+    .email-signup input {
+        flex-basis: 100%;
+        display: block;
+        margin: 5px 0;
+        border-radius: 5px;
+        max-width: 100%; /* Ensure full width within the flex container */
+    }
+}
 @media only screen and (max-width:600px){
+    .header{
+        padding: 10px 10%;
+    }
     .logo{
         width:100px;
     }
@@ -253,13 +285,17 @@ input[type="radio"]{
         font-size: 30px;
         line-height: 50px;
     }
+    .email-signup{
+        max-width: 500px;
+    }
     .email-signup button{
+        flex-basis: 50%;
         font-size: 12px;
         padding: 10px 15px;
     }
     .email-signup input{
+        flex-basis: 50%;
         font-size: 12px;
-        width:250px;
         padding: 10px 15px;
     }
     .text-col, .img-col{
